@@ -1,6 +1,6 @@
 // @ts-nocheck
-const { Tray, Menu, nativeImage, shell } = require('electron')
-const { join } = require('path')
+import { Tray, Menu, nativeImage, shell } from 'electron'
+import { join } from 'path'
 
 class TrayService {
   constructor(iconBasePath) {
@@ -198,4 +198,4 @@ class TrayService {
   }
 }
 
-module.exports = { TrayService }
+export { TrayService }

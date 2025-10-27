@@ -1,14 +1,14 @@
-// @ts-nocheck
-const { defineConfig } = require('vite')
-const vue = require('@vitejs/plugin-vue')
-const electron = require('vite-plugin-electron')
-const renderer = require('vite-plugin-electron-renderer')
-const AutoImport = require('unplugin-auto-import/vite')
-const Components = require('unplugin-vue-components/vite')
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
-const path = require('path')
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import electron from 'vite-plugin-electron'
+import renderer from 'vite-plugin-electron-renderer'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import path from 'path'
+import { fileURLToPath, URL } from 'node:url'
 
-module.exports = defineConfig({
+export default defineConfig({
   plugins: [
     vue(),
     electron([
@@ -60,7 +60,7 @@ module.exports = defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
   server: {

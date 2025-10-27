@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { contextBridge, ipcRenderer } = require('electron')
+import { contextBridge, ipcRenderer } from 'electron'
 
 // 暴露 API 到渲染进程
 const electronAPI = {

@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { Notification } = require('electron')
+import { Notification } from 'electron'
 
 class NotificationService {
   constructor() {
@@ -38,8 +38,9 @@ class NotificationService {
 
       notification.on('click', () => {
         // 点击通知时打开项目页面
-        const { shell } = require('electron')
-        shell.openExternal(options.project.web_url)
+        import('electron').then(({ shell }) => {
+          shell.openExternal(options.project.web_url)
+        })
       })
 
       notification.show()
@@ -84,4 +85,4 @@ class NotificationService {
   }
 }
 
-module.exports = { NotificationService }
+export { NotificationService }

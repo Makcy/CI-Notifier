@@ -1,7 +1,12 @@
 // @ts-nocheck
-const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage, Notification, shell } = require('electron')
-const { join } = require('path')
-const Store = require('electron-store')
+import { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage, Notification, shell } from 'electron'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import Store from 'electron-store'
+
+// ESM 模块中的 __dirname 替代方案
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // 简化的 GitLab 服务类
 class GitLabService {

@@ -1,7 +1,7 @@
 /**
  * @type {import('electron-builder').Configuration}
  */
-module.exports = {
+export default {
   appId: 'com.yourcompany.gitlab-ci-notifier',
   productName: 'GitLab CI Notifier',
   copyright: 'Copyright © 2024 Your Company',

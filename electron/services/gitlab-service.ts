@@ -1,5 +1,5 @@
 // @ts-nocheck
-const axios = require('axios')
+import axios from 'axios'
 
 class GitLabService {
   constructor(baseUrl, token) {
@@ -151,4 +151,4 @@ class GitLabService {
   }
 }
 
-module.exports = { GitLabService }
+export { GitLabService }
